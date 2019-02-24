@@ -1,4 +1,4 @@
-export function usersList (state = {usersList: [], usersDesc: [], bio:'', usersStars:[]} , action) {
+export function usersReducer (state = {usersList: [], usersDesc: [], error: false}, action){
     switch(action.type) {
         case 'USERS_LIST_DATA_SUCCESS':
             return {
@@ -6,15 +6,14 @@ export function usersList (state = {usersList: [], usersDesc: [], bio:'', usersS
                 usersList: action.usersList
             };
         case 'USERS_DESCRIPTION_SUCCESS':
-        // console.log('This is action ', action.usersDesc.bio)
             return {
                 ...state,
                 usersDesc: action.usersDesc
             };
-        case 'USERS_STARS_SUCCESS':
+        case 'GET_USERS_FAILURE':
             return {
                 ...state,
-                usersStars: action.usersStars
+                error: true
             }
         default: 
             return state

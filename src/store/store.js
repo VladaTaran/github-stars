@@ -1,15 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-// import filtersReducer from '../reducers/filters';
-import {usersList} from '../reducers/userDescription';
+import {usersReducer} from '../reducers/usersReducer';
 
 export default () => {
     const store = createStore(
         combineReducers({
-            usersList: usersList,
-            // userDescription: userDescriptionReducer
+            users: usersReducer,
         }),
         applyMiddleware(ReduxThunk)
       );
     return store;
 };
+   

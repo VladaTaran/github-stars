@@ -29,7 +29,7 @@ const UserName = styled.p`
 
 const UserNameInfo = (props) => (
     <UserNameContainer>
-        <UserLink href={props.userHtml_url}>{props.userLogin}</UserLink>
+        <UserLink href={props.userHtml_url} target="_blank">{props.userLogin}</UserLink>
         <UserName>{props.userDescName}</UserName>
         <UserStars userDescStars = {props.userDescStars} />
     </UserNameContainer>

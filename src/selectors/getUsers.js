@@ -1,8 +1,8 @@
 import { getUsersSuccess, getUsersDescription, getUsersFailure } from '../actions/users';
 import { getStars } from './getStars';
 
-const client_id = '';
-const client_secret = ''; 
+const client_id = 'Iv1.1cf914d9918fca4a';
+const client_secret = 'bc5dfb983d859ccea024e35483bdebfd9ad64ce4'; 
 
 export function getUsers(url) {
     return (dispatch)=>{

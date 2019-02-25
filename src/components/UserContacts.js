@@ -41,6 +41,7 @@ const UserContacts = (props) => (
         </Location>
         <Email>
           <GoMail style= {{color: '#586069'}}/>
+          {/* <UserEmail>{props.userDescEmail}</UserEmail> */}
           <UserEmail>example@email.com</UserEmail>
         </Email>
     </UserContactsContainer>

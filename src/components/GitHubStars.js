@@ -58,42 +58,39 @@ render() {
     if(error === true) {
       return (
         <ErrorPage />
-      )
-    } else {
-      return (
-        <Container>
-          <List>
-            {usersList.map(user => 
-              <ListItem key={user.id}>
-                <ListItemImg  
-                  src={user.avatar_url} 
-                  alt="user avatar"
-                />
-                <ListItemInfo>
-                  {usersDesc.map(userDesc => (userDesc.login === user.login) && (
-                        <React.Fragment key={user.id+userDesc.login}>
-                          <UserNameInfo 
-                            userHtml_url = {user.html_url}
-                            userLogin = {user.login}
-                            userDescName = {userDesc.name}
-                            userDescStars = {userDesc.stars}
-                          />
-                          <UserWork>{userDesc.bio}</UserWork>
-                          <UserContacts 
-                            userDescLocation = {userDesc.location}
-                            // userDescEmail = {userDesc.email}
-                          />
-                        </React.Fragment>
-                      ))
-                    }
-                </ListItemInfo>
-              </ListItem>
-            )
-          }
-          </List>
-        </Container>
-      );
-    }
+      )} 
+    return (
+      <Container>
+        <List>
+          {usersList.map( ({ login: userLogin, id, avatar_url, html_url }) => 
+            <ListItem key={id}>
+              <ListItemImg  
+                src={avatar_url} 
+                alt="user avatar"
+              />
+              <ListItemInfo>
+                {usersDesc.map( ({ login, name, stars, bio, location }) => (login === userLogin) && (
+                      <React.Fragment key={id+login}>
+                        <UserNameInfo 
+                          userHtml_url = {html_url}
+                          userLogin = {userLogin}
+                          userDescName = {name}
+                          userDescStars = {stars}
+                        />
+                        <UserWork>{bio}</UserWork>
+                        <UserContacts 
+                          userDescLocation = {location}
+                        />
+                      </React.Fragment>
+                    ))
+                  }
+              </ListItemInfo>
+            </ListItem>
+          )
+        }
+        </List>
+      </Container>
+    );
   }
 };
 

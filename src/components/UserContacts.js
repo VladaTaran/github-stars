@@ -32,17 +32,23 @@ const UserEmail = styled.p`
     font-size: 12px;
     margin-left: 10px;
 `
+const LocationIcon = styled(GoLocation)`
+    color: '#586069';
+`
+
+const EmailIcon = styled(GoMail)`
+    color: '#586069';
+` 
 
 const UserContacts = (props) => (
     <UserContactsContainer>
         <Location>
-            <GoLocation style= {{color: '#586069'}} />
+            <LocationIcon />
             <UserLocation>{props.userDescLocation}</UserLocation>
         </Location>
         <Email>
-          <GoMail style= {{color: '#586069'}}/>
-          {/* <UserEmail>{props.userDescEmail}</UserEmail> */}
-          <UserEmail>example@email.com</UserEmail>
+            <EmailIcon />
+            <UserEmail>example@email.com</UserEmail>
         </Email>
     </UserContactsContainer>
 );

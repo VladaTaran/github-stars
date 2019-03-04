@@ -23,11 +23,18 @@ const HeaderAbout = styled.p`
   color: hsla(0,0%,100%,.7);
 `
 
+const GitHubIcon = styled(GoMarkGithub)`\
+  color: white; 
+  height: 32px; 
+  width: 32px; 
+  padding-left: 40px;
+`
+
 const Header = () => (
     <HeaderContainer>
         <HeaderTitle>
           <HeaderLink href='https://github.com/'>
-            <GoMarkGithub style={{color: 'white', height: '32px', width: '32px', paddingLeft:'40px'}}/>
+          <GitHubIcon />
           </HeaderLink>
           <HeaderAbout>Git Hub Stars</HeaderAbout>
         </HeaderTitle>

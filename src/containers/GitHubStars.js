@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
 import GitHubStars from '../components/GitHubStars';
 
-const mapStateToProps = state => {
-    return {
-        usersList: state.users.usersList,
-        usersDesc: state.users.usersDesc,
-        error: state.users.error
-    }
-};
+const mapStateToProps = ({users: { usersList, usersDesc, error }}) => ({
+        usersList,
+        usersDesc,
+        error
+    });
 
 export default connect(mapStateToProps)(GitHubStars)
